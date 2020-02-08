@@ -48,7 +48,8 @@ static NSString *const CHANNEL_NAME = @"flutter_webview_plugin";
             result(response);
         }];
     } else if ([@"resize" isEqualToString:call.method]) {
-        [self resize:call];
+        // 键盘弹起时，会自动resize。然而这会造成页面部分白屏
+        // [self resize:call];
         result(nil);
     } else if ([@"reloadUrl" isEqualToString:call.method]) {
         [self reloadUrl:call];
